@@ -1,0 +1,36 @@
+<template name="athletes">
+	{{>header}}
+	<div class="container AthleteContainer">
+		
+		
+			{{#each Athletes}}
+				{{#if even @index}}
+				<a class="athlete-link col-xs-12 col-sm-12" href="/{{_id}}">
+					
+					<div class="athlete-profile-pic" style="background:url('/img/{{img}}'); background-repeat:no-repeat; background-size:cover;background-position:top center; width:20%;height:100%;float:right;"></div>
+					<div style="float:left;width:80%;text-align:center;padding-top:50px;">
+						<h3>{{athleteName}}</h3>
+						<p>{{sport}}</p>
+					</div>
+				</a>
+				{{/if}}
+				{{#unless even @index}}
+					<a class="athlete-link col-xs-12 col-sm-12" href="/{{_id}}">
+						
+						<div class="athlete-profile-pic" style="background:url('/img/{{img}}'); background-repeat:no-repeat; background-size:cover;background-position:top center; width:20%;height:100%;float:left;"></div>
+						<div style="float:right;width:80%;text-align:center;padding-top:50px;">
+							<h3>{{athleteName}}</h3>
+							<p>{{sport}}</p>
+						</div>
+					</a>
+				{{/unless}}
+	<!-- 		<div class="xout">x</div> -->
+			{{/each}}
+
+
+		
+		
+
+
+	</div>
+</template>
